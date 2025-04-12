@@ -35,7 +35,7 @@ A modern, AI-powered **Tic-Tac-Toe game** built with **Python** and **Tkinter**,
 ### 🔁 Clone This Repository
 
 ```bash
-git clone https://github.com/Snehashish12/ai-ttt-gui.git
+git clone https://github.com/wazoskilqmbo/Ai-TTT-game.git
 cd ai-ttt-gui
 ```
 
