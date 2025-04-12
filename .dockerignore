@@ -1,0 +1,7 @@
+# Ignore assets folder
+assets/
+
+# Ignore any other unnecessary files
+*.log
+*.md
+*.git
