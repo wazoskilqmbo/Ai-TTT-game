@@ -1,23 +1,24 @@
 FROM python:3.13-alpine
 
-# Install dependencies (in Alpine, you often need to install additional packages)
+# Install required system dependencies for Tkinter and GUI support
 RUN apk update && apk add --no-cache \
-    build-base \
-    libffi-dev \
-    musl-dev \
-    && rm -rf /var/cache/apk/*  # Clean up unnecessary files
+    tcl \
+    tk \
+    ttf-dejavu \
+    fontconfig \
+    && rm -rf /var/cache/apk/*
 
-# Set up the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy the local code into the container
+# Copy app files
 COPY . /app
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port (if applicable)
-EXPOSE 5000
+# Set display environment variable (usually overridden during run)
+ENV DISPLAY=:0
 
-# Set the default command to run the app
+# Run the app
 CMD ["python", "main.py"]
